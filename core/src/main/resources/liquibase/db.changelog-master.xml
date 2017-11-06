@@ -8,5 +8,4 @@
 
     <include file="liquibase/changelogs/db.changelog-1.0.xml"/>
 
-
 </databaseChangeLog>
