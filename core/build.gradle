@@ -1,6 +1,6 @@
 apply from: "${rootDir}/gradle/java.gradle"
 
-def project = project(":core") {
+project(":core") {
     dependencies {
         compile project(":core-api")
 
@@ -13,4 +13,3 @@ def project = project(":core") {
         compile libs.spring_boot_starter_test
     }
 }
-project
