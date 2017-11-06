@@ -1,14 +1,16 @@
-group 'Java3'
-version '1.0-SNAPSHOT'
+apply from: "${rootDir}/gradle/java.gradle"
 
-apply plugin: 'java'
+def project = project(":core") {
+    dependencies {
+        compile project(":core-api")
 
-sourceCompatibility = 1.8
+        compile libs.spring_boot_starter_data_jpa
+        compile libs.hibernateJava8
+        compile libs.h2
+        compile libs.liquibase
+        compile libs.guava
 
-repositories {
-    mavenCentral()
+        compile libs.spring_boot_starter_test
+    }
 }
-
-dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
-}
+project

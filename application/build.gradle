@@ -1,14 +1,10 @@
-group 'Java3'
-version '1.0-SNAPSHOT'
+apply from: "${rootDir}/gradle/java.gradle"
 
-apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
 
-sourceCompatibility = 1.8
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+project(":application") {
+    dependencies {
+        compile project(":core")
+        compile project(":integrations-rest")
+    }
 }
