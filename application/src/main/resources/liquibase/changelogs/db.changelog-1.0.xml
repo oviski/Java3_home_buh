@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="1" author="valentina" context="main">
+        <createSequence sequenceName="clients_seq" />
+    </changeSet>
+
+    <changeSet id="2" author="valentina" context="main">
+        <createTable tableName="checks">
+            <column name="checkid" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="datapourches" type="date">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="sumofcheck" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="shopname" type="varchar(15)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="userid" type="int">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="usermoneyaccountid" type="int">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="detailsallow" type="bit">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="comments" type="varchar(50)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="3" author="valentina" context="main">
+        <createTable tableName="checkdetails">
+            <column name="checkdetailid" type="BIGINT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="checkid" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="checkpositionid" type="int">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="categoryid" type="int">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="subcategoryid" type="int">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="productid" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="sumofproduct" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="positiondetail" type="varchar(25)"/>
+
+        </createTable>
+    </changeSet>
+
+    <changeSet id="4" author="valentina" context="main">
+        <createTable tableName="users">
+            <column name="userid" type="int">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="username" type="varchar(25)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="5" author="valentina">
+        <createTable tableName="usersmoneyaccount">
+            <column name="usermoneyaccountid" type="int">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="userid" type="int">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="moneyaccountname" type="varchar(25)">
+                <constraints nullable="false"/>
+            </column>
+
+        </createTable>
+    </changeSet>
+
+    <changeSet id="6" author="valentina">
+        <createTable tableName="category">
+            <column name="categoryid" type="int">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="categoryname" type="varchar(15)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="subcategoryallow" type="bit">
+                <constraints nullable="false"/>
+            </column>
+
+        </createTable>
+    </changeSet>
+
+    <changeSet id="7" author="valentina">
+        <createTable tableName="subcategory">
+            <column name="subcategoryid" type="int">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="categoryid" type="int">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="subcategoryname" type="varchar(25)">
+                <constraints nullable="false"/>
+            </column>
+
+        </createTable>
+    </changeSet>
+
+
+    <changeSet id="8" author="valentina">
+        <createTable tableName="products">
+            <column name="productid" type="BIGINT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="categoryid" type="int">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="subcategoryid" type="int">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="productname" type="varchar(25)">
+                <constraints nullable="false"/>
+            </column>
+
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
