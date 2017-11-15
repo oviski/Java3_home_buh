@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class CheckBuilder {
 
-    private Long checkID;
+//    private Long checkID;
     private Date dataPourches;
     private Long sumOfCheck;
     private String shopName;
@@ -20,6 +20,7 @@ public class CheckBuilder {
     }
 
     public static CheckBuilder createCheck() {
+
         return new CheckBuilder();
     }
 
