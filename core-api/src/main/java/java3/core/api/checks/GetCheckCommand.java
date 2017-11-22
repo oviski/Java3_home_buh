@@ -4,8 +4,15 @@ import java3.core.api.DomainCommand;
 
 public class GetCheckCommand implements DomainCommand<GetCheckResult>{
 
+    private Long checkID;
 
+    public GetCheckCommand(Long checkID) {
+        this.checkID = checkID;
+    }
 
+    public Long getCheckID() {
+        return checkID;
+    }
 }
 /*
 package lv.javaguru.java3.core.api.users;

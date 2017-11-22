@@ -11,7 +11,7 @@ public class GetCheckResult implements DomainCommandResult{
         this.check = check;
     }
 
-    private CheckDTO getCheck() {
+    public CheckDTO getCheck() {
         return check;
     }
 }

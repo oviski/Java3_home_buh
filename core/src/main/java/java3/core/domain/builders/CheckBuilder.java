@@ -49,7 +49,7 @@ public class CheckBuilder {
         this.shopName = shopName;
         return this;
     }
-    public CheckBuilder withWhoPayID(Integer userID){
+    public CheckBuilder withUserID(Integer userID){
         this.userID = userID;
         return this;
     }

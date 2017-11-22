@@ -1,6 +1,5 @@
 package java3.core.api.exceptions;
 
-import org.omg.CORBA.portable.ApplicationException;
 
 import java.util.Arrays;
 import java.util.List;
