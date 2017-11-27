@@ -16,7 +16,7 @@ class CheckConverter {
                 .withDatePourches(check.getDataPourches())
                 .withShopName(check.getShopName())
                 .withSumOfCheck(check.getSumOfCheck())
-                .withWhoPayID(check.getUserID())
+                .withUserID(check.getUserID())
                 .withUserMoneyAccountID(check.getUserMoneyAccountID())
                 .withComments(check.getComments())
                 .build();

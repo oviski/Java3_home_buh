@@ -1,6 +1,5 @@
 package java3.core.api.exceptions;
 
-import javax.xml.bind.ValidationException;
 import java.util.ArrayList;
 import java.util.List;
 

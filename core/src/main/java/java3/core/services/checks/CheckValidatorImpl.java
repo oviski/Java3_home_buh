@@ -1,12 +1,17 @@
 package java3.core.services.checks;
 
-import java3.common.dtos.ValidationErrorDTO;
+
+import java3.core.api.exceptions.ResponseStatus;
 import java3.core.api.exceptions.ValidationError;
 import org.springframework.stereotype.Component;
-import sun.security.provider.certpath.OCSPResponse;
+import org.springframework.util.StringUtils;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Optional;
 
+import static java3.core.api.exceptions.ValidationErrorBuilder.createValidationError;
 import static java3.core.api.exceptions.ValidationExceptionBuilder.createValidationException;
 
 @Component
@@ -21,7 +26,8 @@ public class CheckValidatorImpl implements CheckValidator {
                          Boolean detailsAllow,
                          String comments) {
         List<ValidationError> errors = new ArrayList<>();
-        errors.addAll(validateDatePourches(dataPourches));
+        //errors.addAll();
+        validateDatePourches(dataPourches).ifPresent(errors::add);
         validateSumOfCheck(sumOfCheck).ifPresent(errors::add);
         validateShopName(shopName).ifPresent(errors::add);
         validateUserID(userID).ifPresent(errors::add);
@@ -29,39 +35,81 @@ public class CheckValidatorImpl implements CheckValidator {
         validateDetailsAllow(detailsAllow).ifPresent(errors::add);
         validateComments(comments).ifPresent(errors::add);
         if (!errors.isEmpty()) {
-            throw createValidationException(OCSPResponse.ResponseStatus.BAD_REQUEST)
+            throw createValidationException(ResponseStatus.BAD_REQUEST)
                     .with(errors).build();
         }
 
     }
 
-    private Collection<? extends ValidationError> validateDatePourches(Date dataPourches) {
-        return null;
+    private Optional<ValidationError> validateDatePourches(Date dataPourches) {
+        if(StringUtils.isEmpty(dataPourches)) {
+            return Optional.of(createValidationError()
+                    .withField("dataPourches")
+                    .withErrorCode("empty.field").build());
+        } else {
+            return Optional.empty();
+        }
     }
 
 
-    private Optional<Object> validateComments(String comments) {
-        return null;
+    private Optional<ValidationError> validateComments(String comments) {
+        if(StringUtils.isEmpty(comments)) {
+            return Optional.of(createValidationError()
+                    .withField("comments")
+                    .withErrorCode("empty.field").build());
+        } else {
+            return Optional.empty();
+        }
     }
 
-    private Optional<Object> validateDetailsAllow(Boolean detailsAllow) {
-        return null;
+    private Optional<ValidationError> validateDetailsAllow(Boolean detailsAllow) {
+        if(StringUtils.isEmpty(detailsAllow)) {
+            return Optional.of(createValidationError()
+                    .withField("detailsAllow")
+                    .withErrorCode("empty.field").build());
+        } else {
+            return Optional.empty();
+        }
     }
 
-    private Optional<Object> validateUserMoneyAccountID(Integer userMoneyAccountID) {
-        return null;
+    private Optional<ValidationError> validateUserMoneyAccountID(Integer userMoneyAccountID) {
+        if(StringUtils.isEmpty(userMoneyAccountID)) {
+            return Optional.of(createValidationError()
+                    .withField("userMoneyAccountID")
+                    .withErrorCode("empty.field").build());
+        } else {
+            return Optional.empty();
+        }
     }
 
-    private Optional<Object> validateUserID(Integer userID) {
-        return null;
+    private Optional<ValidationError> validateUserID(Integer userID) {
+        if(StringUtils.isEmpty(userID)) {
+            return Optional.of(createValidationError()
+                    .withField("userID")
+                    .withErrorCode("empty.field").build());
+        } else {
+            return Optional.empty();
+        }
     }
 
-    private Optional<Object> validateShopName(String shopName) {
-        return null;
+    private Optional<ValidationError> validateShopName(String shopName) {
+            if(StringUtils.isEmpty(shopName)) {
+                return Optional.of(createValidationError()
+                        .withField("shopName")
+                        .withErrorCode("empty.field").build());
+            } else {
+                return Optional.empty();
+            }
     }
 
-    private Optional<Object> validateSumOfCheck(Long sumOfCheck) {
-        return null;
+    private Optional<ValidationError> validateSumOfCheck(Long sumOfCheck) {
+                if(StringUtils.isEmpty(sumOfCheck)) {
+                    return Optional.of(createValidationError()
+                            .withField("sumOfCheck")
+                            .withErrorCode("empty.field").build());
+                } else {
+                    return Optional.empty();
+                }
     }
 
 

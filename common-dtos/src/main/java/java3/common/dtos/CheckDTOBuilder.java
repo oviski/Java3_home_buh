@@ -53,7 +53,7 @@ public class CheckDTOBuilder {
         this.shopName = shopName;
         return this;
     }
-    public CheckDTOBuilder withWhoPayID(Integer userID){
+    public CheckDTOBuilder withUserID(Integer userID){
         this.userID = userID;
         return this;
     }

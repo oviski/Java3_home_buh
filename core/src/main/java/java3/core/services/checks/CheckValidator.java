@@ -1,5 +1,6 @@
 package java3.core.services.checks;
 
+import javax.xml.bind.ValidationException;
 import java.util.Date;
 
 public interface CheckValidator {
