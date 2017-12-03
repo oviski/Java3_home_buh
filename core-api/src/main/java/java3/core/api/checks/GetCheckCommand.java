@@ -31,4 +31,22 @@ public class GetUserCommand implements DomainCommand<GetUserResult> {
         return login;
     }
 }
+
+
+main ()
+{
+
+int P = 4;
+MyClass o=NULL;
+o = new MyClass();
+o.myFunc(5);
+myFunc();
+
+}
+
+myFunc()
+{
+int a = 4;
+}
+
  */

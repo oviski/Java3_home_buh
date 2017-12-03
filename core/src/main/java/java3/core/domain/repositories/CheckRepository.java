@@ -5,6 +5,8 @@ import java3.core.api.exceptions.ValidationErrorBuilder;
 import java3.core.domain.Check;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 import static java3.core.api.exceptions.ValidationExceptionBuilder.createValidationException;
@@ -20,6 +22,9 @@ public interface CheckRepository extends JpaRepository<Check, Long> {
                 .withField("checkID")
                 .withErrorCode("invalid.value")).build());
     }
+
+
+    Optional<List<Check>> findAllByDataPourches(Date dataPourches);
 
 
 }

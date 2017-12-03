@@ -4,6 +4,9 @@ import java3.common.dtos.CheckDTO;
 import java3.core.domain.Check;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static java3.common.dtos.CheckDTOBuilder.createCheckDTO;
 
 @Component
@@ -20,6 +23,14 @@ class CheckConverter {
                 .withUserMoneyAccountID(check.getUserMoneyAccountID())
                 .withComments(check.getComments())
                 .build();
+    }
+
+    public List<CheckDTO> convert (List<Check> checkList){
+        List<CheckDTO> checkDTOList = new ArrayList<CheckDTO>();
+        for (Check check:checkList){
+            checkDTOList.add(convert(check));
+        }
+        return checkDTOList;
     }
 }
 

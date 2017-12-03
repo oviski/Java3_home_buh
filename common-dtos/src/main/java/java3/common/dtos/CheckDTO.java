@@ -62,7 +62,7 @@ public class CheckDTO implements Serializable {
         this.userMoneyAccountID = userMoneyAccountID;
     }
 
-    public boolean isDetailAllow() {
+    public boolean getDetailAllow() {
         return detailAllow;
     }
 
