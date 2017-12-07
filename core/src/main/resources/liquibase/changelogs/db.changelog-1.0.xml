@@ -6,9 +6,9 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
-    <changeSet id="1" author="valentina" context="main">
-        <createSequence sequenceName="clients_seq" />
-    </changeSet>
+    <!--<changeSet id="1" author="valentina" context="main">-->
+        <!--<createSequence sequenceName="clients_seq" />-->
+    <!--</changeSet>-->
 
     <changeSet id="2" author="valentina" context="main">
         <createTable tableName="checks">
@@ -41,12 +41,25 @@
             </column>
 
             <column name="comments" type="varchar(50)"/>
+
+            <column name="version" type="BIGINT" defaultValue="0">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="created_at" type="DATETIME">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="modified_at" type="DATETIME">
+                <constraints nullable="true"/>
+            </column>
+
         </createTable>
     </changeSet>
 
     <changeSet id="3" author="valentina" context="main">
         <createTable tableName="checkdetails">
-            <column name="checkdetailid" type="BIGINT">
+            <column name="checkdetailid" type="BIGINT" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
 
@@ -75,6 +88,19 @@
             </column>
 
             <column name="positiondetail" type="varchar(25)"/>
+
+            <column name="version" type="BIGINT" defaultValue="0">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="created_at" type="DATETIME">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="modified_at" type="DATETIME">
+                <constraints nullable="true"/>
+            </column>
+
 
         </createTable>
     </changeSet>

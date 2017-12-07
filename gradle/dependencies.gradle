@@ -6,7 +6,7 @@ ext {
             guavaVersion                 : "18.0",
             hibernateVersion             : "5.0.12.Final",
             springJdbcVersion            : "5.0.2.RELEASE",
-            mysqlVersion                 : "6.0.5"
+            mysqlVersion                 : "5.1.45"
     ]
     libs = [
             spring_boot_starter_web     : "org.springframework.boot:spring-boot-starter-web:$versions.springBootVersion",

@@ -5,11 +5,11 @@ import java.util.Date;
 
 @Entity
 @Table(name = "checks")
-public class Check{
+public class Check extends BaseEntity{
 
     @Id
-    @GeneratedValue(generator = "clients_seq", strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(name = "clients_seq", sequenceName = "clients_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+//    @SequenceGenerator(name = "clients_seq", sequenceName = "clients_seq", allocationSize = 1)
     @Column(name="checkid", nullable = false)
     private Long checkID;
 
