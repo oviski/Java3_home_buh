@@ -6,9 +6,10 @@ project(":core") {
 
         compile libs.spring_boot_starter_data_jpa
         compile libs.hibernateJava8
-        compile libs.h2
+        compile libs.springJdbc
         compile libs.liquibase
         compile libs.guava
+        compile libs.mysql_jdbcDriver
 
         compile libs.spring_boot_starter_test
     }

@@ -5,7 +5,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "checks")
-public class Check {
+public class Check{
 
     @Id
     @GeneratedValue(generator = "clients_seq", strategy = GenerationType.SEQUENCE)
@@ -28,7 +28,7 @@ public class Check {
     @Column(name="usermoneyaccountid", nullable = false)
     private Integer userMoneyAccountID;
 
-    @Column(name="detailallow", nullable = false)
+    @Column(name="detailsallow", nullable = false)
     private boolean detailAllow;
 
     @Column(name="comments")

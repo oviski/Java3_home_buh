@@ -8,7 +8,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "checkdetails")
-public class CheckDetails {
+public class CheckDetails{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column (name = "checkdetailid")
@@ -23,10 +23,10 @@ public class CheckDetails {
     private Integer subcategoryID;
     @Column (name = "productid")
     private Long productID;
-    @Column (name = "sumofproducts")
+    @Column (name = "sumofproduct")
     private Long sumOfProducts;
-    @Column (name = "positiondetails")
-    private String positionDetails;
+    @Column (name = "positiondetail")
+    private String positionDetail;
 
     public Long getCheckDetailID() {
         return checkDetailID;
@@ -84,12 +84,12 @@ public class CheckDetails {
         this.sumOfProducts = sumOfProducts;
     }
 
-    public String getPositionDetails() {
-        return positionDetails;
+    public String getPositionDetail() {
+        return positionDetail;
     }
 
-    public void setPositionDetails(String positionDetails) {
-        this.positionDetails = positionDetails;
+    public void setPositionDetail(String positionDetails) {
+        this.positionDetail = positionDetails;
     }
 }
 /*

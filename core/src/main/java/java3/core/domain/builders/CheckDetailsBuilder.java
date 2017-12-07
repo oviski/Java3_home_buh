@@ -13,7 +13,7 @@ public class CheckDetailsBuilder {
     private Integer subcategoryID;
     private Long productID;
     private Long sumOfProducts;
-    private String positionDetails;
+    private String positionDetail;
 
 
     private CheckDetailsBuilder() {}
@@ -30,7 +30,7 @@ public class CheckDetailsBuilder {
         checksDetails.setSubcategoryID(subcategoryID);
         checksDetails.setProductID(productID);
         checksDetails.setSumOfProducts(sumOfProducts);
-        checksDetails.setPositionDetails(positionDetails);
+        checksDetails.setPositionDetail(positionDetail);
         return checksDetails;
     }
 
@@ -58,8 +58,8 @@ public class CheckDetailsBuilder {
         this.sumOfProducts = sumOfProducts;
         return this;
     }
-    public CheckDetailsBuilder withPositionDetails(String positionDetails){
-        this.positionDetails = positionDetails;
+    public CheckDetailsBuilder withPositionDetail(String positionDetail){
+        this.positionDetail = positionDetail;
         return this;
     }
 }

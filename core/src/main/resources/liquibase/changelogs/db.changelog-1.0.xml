@@ -79,7 +79,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="4" author="valentina" context="main">
+<!--    <changeSet id="4" author="valentina" context="main">
         <createTable tableName="users">
             <column name="userid" type="int">
                 <constraints primaryKey="true" nullable="false"/>
@@ -162,5 +162,5 @@
             </column>
 
         </createTable>
-    </changeSet>
+    </changeSet>-->
 </databaseChangeLog>
