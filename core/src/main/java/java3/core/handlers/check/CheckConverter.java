@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import static java3.common.dtos.CheckDTOBuilder.createCheckDTO;
 
@@ -25,10 +26,12 @@ class CheckConverter {
                 .build();
     }
 
-    public List<CheckDTO> convert (List<Check> checkList){
+    public List<CheckDTO> convert (Optional<List<Check>> checkList){
         List<CheckDTO> checkDTOList = new ArrayList<CheckDTO>();
-        for (Check check:checkList){
-            checkDTOList.add(convert(check));
+        if (checkList!=null){
+            for (Check check:checkList.get()){
+                checkDTOList.add(convert(check));
+            }
         }
         return checkDTOList;
     }

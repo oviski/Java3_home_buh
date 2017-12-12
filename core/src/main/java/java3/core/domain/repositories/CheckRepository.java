@@ -26,6 +26,8 @@ public interface CheckRepository extends JpaRepository<Check, Long> {
 
     Optional<List<Check>> findAllByDataPourches(Date dataPourches);
 
+//    List<Check> findAll();
+
 
 }
 

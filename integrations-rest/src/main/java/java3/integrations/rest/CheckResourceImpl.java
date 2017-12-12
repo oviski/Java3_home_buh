@@ -3,13 +3,12 @@ package java3.integrations.rest;
 
 import java3.common.dtos.CheckDTO;
 import java3.core.api.CommandExecutor;
-import java3.core.api.checks.GetCheckCommand;
-import java3.core.api.checks.GetCheckResult;
-import java3.core.api.checks.RegisterCheckCommand;
-import java3.core.api.checks.RegisterCheckResult;
+import java3.core.api.checks.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping(value = RESTResource.API_PATH)
@@ -30,6 +29,13 @@ public class CheckResourceImpl {
         GetCheckCommand command = new GetCheckCommand(checkID);
         GetCheckResult result = commandExecutor.execute(command);
         return ResponseEntity.ok(result.getCheck());
+    }
+
+    @RequestMapping(value = "/checks/all", method = RequestMethod.GET)
+    public ResponseEntity<List<CheckDTO>> getAll() {
+        GetAllChecksCommand command = new GetAllChecksCommand();
+        GetAllChecksResult result = commandExecutor.execute(command);
+        return ResponseEntity.ok(result.getAllChecks());
     }
 
 }
