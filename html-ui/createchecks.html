@@ -1,0 +1,42 @@
+
+<html>
+<script>
+
+function  sendJson()
+{
+alert(1);
+var xhr = new XMLHttpRequest();
+
+//var json = JSON.stringify({
+//  name: "Виктор",
+//  surname: "Цой"
+//});
+var json = '{"dataPourches":1512856800000,"sumOfCheck":1010,"shopName":"Maxima","userID":1,"userMoneyAccountID":1,"detailAllow":false,"comments":"xxx5"}';
+
+
+
+xhr.open("POST", 'http://localhost:8080/api/checks', false);
+xhr.setRequestHeader('Content-type', 'application/json');
+
+//xhr.onreadystatechange = ...;
+
+// Отсылаем объект в формате JSON и с Content-Type application/json
+// Сервер должен уметь такой Content-Type принимать и раскодировать
+xhr.send(json);             
+
+alert(xhr.responseText);
+
+}
+
+</script>
+
+ <form action="http://localhost:8080/api/checks/" method = "POST">
+  check json:<br>
+  <input type="text" name="CheckDTO" value='{"dataPourches":1512856800000,"sumOfCheck":1010,"shopName":"Maxima","userID":1,"userMoneyAccountID":1,"detailAllow":false,"comments":"xxx5"}'><br>
+  <br>
+  <!--input type="submit" value="Submit"-->
+
+  <a href="#" onclick="sendJson();return false;">sendJson to spring</a>
+
+</form> 
+</html>
