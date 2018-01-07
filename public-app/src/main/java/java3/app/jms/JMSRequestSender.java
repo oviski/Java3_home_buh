@@ -24,7 +24,7 @@ class JMSRequestSenderImpl implements JMSRequestSender {
     @Override
     public void send(JMSRequest jmsRequest) {
         jmsTemplate.send(JMSQueues.PUBLIC_APP_REQUEST_QUEUE, session -> {
-            String message = jsonMapper.mapToString(jmsRequest):
+            String message = jsonMapper.mapToString(jmsRequest);
             TextMessage textMessage = session.createTextMessage(message);
             textMessage.setJMSCorrelationID(ApplicationCorrelationIdHolder.CORRELATION_ID);
             return textMessage;

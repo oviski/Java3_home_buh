@@ -1,6 +1,7 @@
 package java3.app.rest;
 
 import java3.core.api.jms.JMSRequest;
+import org.slf4j.Logger;
 import org.springframework.context.event.ContextClosedEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.http.ResponseEntity;
@@ -12,7 +13,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
-import java.util.logging.Logger;
+import static org.slf4j.LoggerFactory.getLogger;
 
 public interface DeferredResultHolder {
     void put(JMSRequest jmsRequest, DeferredResult<ResponseEntity> result);

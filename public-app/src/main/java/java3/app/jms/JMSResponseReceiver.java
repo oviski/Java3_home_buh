@@ -1,5 +1,6 @@
 package java3.app.jms;
 
+import java3.app.common.JsonMapper;
 import java3.core.api.jms.JMSQueues;
 import java3.core.api.jms.JMSResponse;
 import org.springframework.beans.factory.annotation.Autowired;

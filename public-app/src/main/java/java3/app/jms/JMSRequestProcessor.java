@@ -10,7 +10,7 @@ import org.springframework.web.context.request.async.DeferredResult;
 
 public interface JMSRequestProcessor {
 
-    DefferedResult<ResponseEntity> process(JMSAPIRequest request);
+    DeferredResult<ResponseEntity> process(JMSAPIRequest request);
 }
 
 class JMSRequestProcessorImpl implements JMSRequestProcessor {

@@ -4,28 +4,29 @@ import java3.app.common.JsonMapper;
 import java3.app.jms.JMSResponseHandler;
 import java3.core.api.jms.JMSResponse;
 import java3.core.api.jms.SupportedCommandId;
+import java3.core.api.jms.requests.checks.JMSGetCheckResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
 @Component
-class JMSGetUserResponseHandler implements JMSResponseHandler {
+class JMSGetCheckResponseHandler implements JMSResponseHandler {
 
     @Autowired private JsonMapper jsonMapper;
 
     @Override
     public String getSupportedCommandID() {
-        return SupportedCommandId.GET_USER;
+        return SupportedCommandId.GET_CHECK;
     }
 
     @Override
     public ResponseEntity process(JMSResponse jmsResponse) {
         String payload = jmsResponse.getPayload();
-        JMSGetUserResponse response = jsonMapper.mapToObject(
-                payload, JMSGetUserResponse.class
+        JMSGetCheckResponse response = jsonMapper.mapToObject(
+                payload, JMSGetCheckResponse.class
         );
-        return ResponseEntity.ok(response.getUserDTO)
-        return null;
+        return ResponseEntity.ok(response.getCheckDTO);
+
     }
 }
 /*@Component
