@@ -1,5 +1,7 @@
 package java3.core.api.exceptions;
 
+import java3.core.api.common.ResponseStatus;
+
 public abstract class ApplicationException extends RuntimeException {
 
     private ResponseStatus resultStatus;

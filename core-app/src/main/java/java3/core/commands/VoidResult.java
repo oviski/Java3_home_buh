@@ -1,0 +1,24 @@
+package java3.core.commands;
+
+public class VoidResult implements DomainCommandResult{
+
+    public static final VoidResult INSTANCE = new VoidResult();
+
+    private VoidResult(){
+
+    }
+}
+
+/*
+package lv.javaguru.java3.core.api;
+
+public class VoidResult implements DomainCommandResult {
+
+    public static final VoidResult INSTANCE = new VoidResult();
+
+    private VoidResult() {
+
+    }
+
+}
+ */
