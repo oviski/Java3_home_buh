@@ -1,4 +1,4 @@
-package src.main.java.java3.common.dtos;
+package java3.common.dtos;
 
 import java.util.List;
 

@@ -1,8 +1,9 @@
 package java3.core.commands.checks;
 
-import java3.core.api.DomainCommand;
 
-public class GetCheckCommand implements DomainCommand<GetCheckResult>{
+import java3.core.commands.DomainCommand;
+
+public class GetCheckCommand implements DomainCommand<GetCheckResult> {
 
     private Long checkID;
 

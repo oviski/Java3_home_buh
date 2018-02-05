@@ -1,9 +1,10 @@
 package java3.core.handlers.check;
 
 import java3.common.dtos.CheckDTO;
-import java3.core.api.checks.RegisterCheckCommand;
-import java3.core.api.checks.RegisterCheckResult;
+import java3.core.commands.checks.RegisterCheckCommand;
+import java3.core.commands.checks.RegisterCheckResult;
 import java3.core.domain.Check;
+
 import java3.core.handlers.DomainCommandHandler;
 import java3.core.services.checks.CheckService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +14,7 @@ import org.springframework.stereotype.Component;
 import static java3.core.domain.builders.CheckBuilder.createCheck;
 
 @Component
-public class RegisterCheckCommanHandler implements DomainCommandHandler<RegisterCheckCommand, RegisterCheckResult>{
+public class RegisterCheckCommanHandler implements DomainCommandHandler<RegisterCheckCommand, RegisterCheckResult> {
 
     @Autowired private CheckConverter checkConverter;
     @Autowired private CheckService checkService;

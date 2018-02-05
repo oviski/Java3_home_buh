@@ -1,7 +1,8 @@
 package java3.core.commands.checks;
 
 import java3.common.dtos.CheckDTO;
-import java3.core.api.DomainCommandResult;
+import java3.core.commands.DomainCommandResult;
+
 
 import java.util.List;
 

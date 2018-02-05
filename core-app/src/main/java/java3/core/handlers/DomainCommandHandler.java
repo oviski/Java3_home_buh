@@ -1,7 +1,8 @@
 package java3.core.handlers;
 
-import java3.core.api.DomainCommand;
-import java3.core.api.DomainCommandResult;
+
+import java3.core.commands.DomainCommand;
+import java3.core.commands.DomainCommandResult;
 
 public interface DomainCommandHandler<C extends DomainCommand, R extends DomainCommandResult>  {
 

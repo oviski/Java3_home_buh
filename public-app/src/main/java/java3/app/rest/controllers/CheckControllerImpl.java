@@ -7,14 +7,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.async.DeferredResult;
+import java3.common.dtos.CheckDTO;
+
 
 @RestController
-@RequestMapping
+@RequestMapping(/api)
 public class CheckControllerImpl {
 
     @Autowired private JMSRequestProcessor jmsRequestProcessor;
 
-    @RequestMapping(value = "/users", method = RequestMethod.POST)
+    @RequestMapping(value = "/check", method = RequestMethod.POST)
     public DeferredResult<ResponseEntity> register(@RequestBody CheckDTO checkDTO) {
         JMSRegisterCheckRequest jmsRequest = new JMSRegisterCheckRequest();
 

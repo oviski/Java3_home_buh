@@ -1,7 +1,8 @@
 package java3.core.commands.checks;
 
 import java3.common.dtos.CheckDTO;
-import java3.core.api.DomainCommand;
+import java3.core.commands.DomainCommand;
+
 
 public class RegisterCheckCommand implements DomainCommand<RegisterCheckResult> {
 

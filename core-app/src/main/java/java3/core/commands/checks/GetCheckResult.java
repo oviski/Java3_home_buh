@@ -1,9 +1,10 @@
 package java3.core.commands.checks;
 
 import java3.common.dtos.CheckDTO;
-import java3.core.api.DomainCommandResult;
+import java3.core.commands.DomainCommandResult;
 
-public class GetCheckResult implements DomainCommandResult{
+
+public class GetCheckResult implements DomainCommandResult {
 
     private CheckDTO check;
 

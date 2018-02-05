@@ -1,5 +1,6 @@
 package java3.core.api.exceptions;
 
+
 import java3.core.api.common.ResponseStatus;
 
 import java.util.ArrayList;

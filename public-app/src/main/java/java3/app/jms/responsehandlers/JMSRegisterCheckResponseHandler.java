@@ -1,6 +1,7 @@
 package java3.app.jms.responsehandlers;
 
 import java3.app.common.JsonMapper;
+import java3.app.jms.JMSResponseHandler;
 import java3.core.api.jms.JMSResponse;
 import java3.core.api.jms.SupportedCommandId;
 import java3.core.api.jms.requests.checks.JMSRegisterCheckResponse;
@@ -9,14 +10,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
 @Component
-class JMSRegisterUserResponseHandler {
+class JMSRegisterCheckResponseHandler implements JMSResponseHandler{
 
     @Autowired
     private JsonMapper jsonMapper;
 
     @Override
     public String getSupportedCommandId() {
-        return SupportedCommandId.REGISTER_USER;
+        return SupportedCommandId.REGISTER_CHECK;
     }
 
     @Override

@@ -7,6 +7,7 @@ public class JMSGetCheckRequest  implements JMSAPIRequest{
 
     @Override
     public String getCommandId() {
+
         return SupportedCommandId.GET_CHECK;
     }
 }

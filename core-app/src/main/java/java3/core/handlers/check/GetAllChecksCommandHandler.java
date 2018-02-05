@@ -1,8 +1,9 @@
 package java3.core.handlers.check;
 
 import java3.common.dtos.CheckDTO;
-import java3.core.api.checks.GetAllChecksCommand;
-import java3.core.api.checks.GetAllChecksResult;
+
+import java3.core.commands.checks.GetAllChecksCommand;
+import java3.core.commands.checks.GetAllChecksResult;
 import java3.core.domain.Check;
 import java3.core.handlers.DomainCommandHandler;
 import java3.core.services.checks.CheckService;
